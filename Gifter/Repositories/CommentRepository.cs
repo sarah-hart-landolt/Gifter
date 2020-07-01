@@ -36,9 +36,9 @@ namespace Gifter.Repositories
         public List<Comment> GetByPostId(int id)
         {
             return _context.Comment
-                           .Include(p => p.UserProfile)
-                           .Include(p => p.Post)
-                           .Where(p => p.PostId == id)
+                           .Include(c => c.UserProfile)
+                           .Include(c => c.Post)
+                           .Where(c => c.PostId == id)
                            .ToList();
         }
         public void Add(Comment comment)

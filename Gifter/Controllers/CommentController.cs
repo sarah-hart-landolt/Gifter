@@ -32,9 +32,9 @@ namespace Gifter.Controllers
             return Ok(comment);
         }
         [HttpGet("getbyuser/{id}")]
-        public IActionResult GetByUser(int id)
+        public IActionResult GetByPostId(int id)
         {
-            return Ok(_commentRepository.GetByUserProfileId(id));
+            return Ok(_commentRepository.GetByPostId(id));
         }
         [HttpPost]
         public IActionResult Comment(Comment comment)

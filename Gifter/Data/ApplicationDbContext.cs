@@ -9,6 +9,6 @@ namespace Gifter.Data
 
         public DbSet<UserProfile> UserProfile { get; set; }
         public DbSet<Post> Post { get; set; }
-        public object Comment { get; internal set; }
+        public DbSet<Comment> Comment { get; internal set; }
     }
 }
