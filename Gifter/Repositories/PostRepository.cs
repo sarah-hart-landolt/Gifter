@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Gifter.Data;
 using Gifter.Models;
+using System;
 
 namespace Gifter.Repositories
 {
@@ -24,6 +25,27 @@ namespace Gifter.Repositories
         {
             return _context.Post.FirstOrDefault(p => p.Id == id);
 
+        }
+
+        public List<Post> Search(string criterion, bool sortDescending)
+        {
+            var query = _context.Post
+                                .Include(p => p.UserProfile)
+                                .Where(p => p.Title.Contains(criterion) || p.Caption.Contains(criterion));
+
+            return sortDescending
+                ? query.OrderByDescending(p => p.DateCreated).ToList()
+                : query.OrderBy(p => p.DateCreated).ToList();
+        }
+
+        public List<Post> Hottest(DateTime searchDate)
+        {
+            return _context.Post
+                                .Include(p => p.UserProfile)
+                                .Include(p => p.Comments)
+                                .Where(p => p.DateCreated>=searchDate)
+                                .OrderBy(p=>p.DateCreated)
+                                .ToList();
         }
 
         public void Add(Post post)
