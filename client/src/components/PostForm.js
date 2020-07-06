@@ -1,15 +1,17 @@
-import React, { useContext, useRef, useEffect } from "react";
+import React, { useContext, useRef, useEffect, useState } from "react";
 import { PostContext } from "../providers/PostProvider";
 import { UserProfileContext } from "../providers/UserProfileProvider";
 
 const PostForm = (props) => {
-  const { addPost } = useContext(PostContext);
-//   const { userProfiles } = useContext(UserProfileContext);
-const { userProfiles, getAllUserProfiles } = useContext(UserProfileContext);
+const { addPost } = useContext(PostContext);
+const {getAllUserProfiles, userProfiles } = useContext(UserProfileContext);
+
 
 useEffect(() => {
     getAllUserProfiles();
   }, []);
+
+
 
   const title = useRef()
   const imageUrl = useRef()

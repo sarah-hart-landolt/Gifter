@@ -1,37 +1,22 @@
-// import React, { useRef, useContext } from "react"
-// import { PostContext } from "../providers/PostProvider"
+import React, { useContext } from 'react'
+import { Input, Form, FormControl, Button } from 'reactstrap'
+import { PostContext } from '../providers/PostProvider'
 
-// export const SearchBar = () => {
-//     const { getAllPosts, searchPosts } = useContext(PostContext)
+const SearchBar = () => {
 
-//     const search = useRef()
+    const {searchPosts} = useContext(PostContext)
 
-//     const newSearch = () => {
-//         if (search.current.value === "") {
-//             getAllPosts();
-//         } else {
-//             searchPosts(search.current.value);
-//         }
-//     }
-//     return (
-//         <fieldset>
-//             <div className="form-group">
-//                 <input
-//                     type="text"
-//                     id="searchTerms"
-//                     Ref={search}
-//                     required
-//                     autoFocus
-//                     className="form-control"
-//                     placeholder="Search Posts"
-//                     onChange={ evt => {
-//                         newSearch()
+    const handleChange = (e) => {
+        searchPosts(e.target.value)
+    }
 
-//                     }
-//                         }
-                    
-//                 />
-//             </div>
-//         </fieldset>
-//     )
-// }
+    return (
+        <Form inline>
+        <Input type='text' onChange={handleChange} placeholder="Search Posts" />
+        <Button variant="outline-light">Search</Button>
+      </Form>
+
+    )
+}
+
+export default SearchBar

@@ -1,13 +1,13 @@
-import React, { useContext, useEffect, useState, useRef } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { PostContext } from "../providers/PostProvider";
 import Post from "./Post";
 import PostForm from "./PostForm";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
-import { SearchBar } from "./SearchBar";
+import SearchBar from "./SearchBar";
 
 
 export const PostList = () => {
-  const { posts, getAllPosts, searchPosts, searchAllPosts, setSearchPosts } = useContext(PostContext);
+  const { getAllPosts, posts } = useContext(PostContext);
   const [modal, setModal] = useState(false)
   const toggle = () => setModal(!modal)
 
@@ -16,17 +16,23 @@ export const PostList = () => {
     getAllPosts();
   }, []);
 
-  useEffect(() => {
-    getAllPosts();
-  }, [posts]);
+  // useEffect(() => {
+  //   getAllPosts();
+  // }, [posts]);
   
+  
+  if (!posts) {
+    return null;
+  }
 
   return (
 <>
 
     <div className="container">
+      <div className="row justify-content-center">
     <Button onClick={toggle}>New Post</Button>
-
+      <SearchBar></SearchBar>
+      </div>
       <div className="row justify-content-center">
 
         <div class="cards-column">

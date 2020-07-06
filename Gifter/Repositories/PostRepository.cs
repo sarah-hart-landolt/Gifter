@@ -41,6 +41,7 @@ namespace Gifter.Repositories
         {
             var query = _context.Post
                                 .Include(p => p.UserProfile)
+                                .Include(c =>c.Comments)
                                 .Where(p => p.Title.Contains(criterion) || p.Caption.Contains(criterion));
 
             return sortDescending

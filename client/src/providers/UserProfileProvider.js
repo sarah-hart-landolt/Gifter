@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const UserProfileContext = React.createContext();
 
@@ -7,8 +7,7 @@ export const UserProfileProvider = (props) => {
 
   const getAllUserProfiles = () => {
     return fetch("api/userprofile")
-      .then((res) => res.json())
-      .then(setUserProfiles);
+      .then((res) => res.json()).then(setUserProfiles)
   };
 
   const addUserProfile = (userProfile) => {
@@ -22,7 +21,7 @@ export const UserProfileProvider = (props) => {
   };
 
   return (
-    <UserProfileContext.Provider value={{ userProfiles, getAllUserProfiles, addUserProfile }}>
+    <UserProfileContext.Provider value={{ getAllUserProfiles, addUserProfile, userProfiles }}>
       {props.children}
     </UserProfileContext.Provider>
   );

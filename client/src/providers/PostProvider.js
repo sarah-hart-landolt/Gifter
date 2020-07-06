@@ -4,18 +4,11 @@ export const PostContext = React.createContext();
 
 export const PostProvider = (props) => {
   const [posts, setPosts] = useState([]);
-  const [searchResults, setSearchPosts] = useState([])
-  const [searchTerms, setSearchTerms] = useState([""])
 
-
-  // useEffect(() => {
-  //   searchPosts(searchTerms);
-  // }, [searchTerms]); 
 
   const getAllPosts = () => {
     return fetch("api/post")
-      .then((res) => res.json())
-      .then(setPosts);
+      .then((res) => res.json()).then(setPosts);
   };
 
   const addPost = (post) => {
@@ -36,14 +29,18 @@ const getPostsByUserId = (userProfileId) => {
   return fetch(`/api/post/user/${userProfileId}`).then((res) => res.json());
 };
 
-  // const searchPosts = (q) => {
-  //   return fetch(`api/post/search?q=${q}`)
-  //     .then((res) => res.json())
-  //     .then(setSearchPosts);
-  // };
+  const searchPosts = (q) => {
+    if (!q) {
+      getAllPosts()
+          return}
+          
+      return fetch(`api/post/search?q=${q}&sortDesc=true`)
+          .then((res) => res.json())
+          .then(setPosts)
+  };
 
   return (
-    <PostContext.Provider value={{ posts, searchResults, getPost, getAllPosts, getPostsByUserId, addPost, setSearchPosts, setSearchTerms }}>
+    <PostContext.Provider value={{posts, getPost, getAllPosts, searchPosts, getPostsByUserId, addPost} }>
       {props.children}
     </PostContext.Provider>
   );

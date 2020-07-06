@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink,Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 const Header = () => {
+const [Modal, setModal] = useState(false)
+  const toggle = () => setModal(!Modal)
   return (
     <nav className="navbar navbar-expand navbar-dark bg-info">
       <Link to="/" className="navbar-brand">
@@ -11,11 +14,6 @@ const Header = () => {
         <li className="nav-item">
           <Link to="/" className="nav-link">
             Feed
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/posts/add" className="nav-link">
-            New Post
           </Link>
         </li>
       </ul>
