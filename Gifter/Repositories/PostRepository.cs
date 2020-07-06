@@ -27,6 +27,16 @@ namespace Gifter.Repositories
 
         }
 
+        public List<Post> GetByUserProfileId(int id)
+        {
+            return _context.Post
+                            .Include(u => u.UserProfile)
+                            .Include(c => c.Comments)
+                            .Where(p => p.UserProfileId == id)
+                            .OrderBy(p => p.Title)
+                            .ToList();
+        }
+
         public List<Post> Search(string criterion, bool sortDescending)
         {
             var query = _context.Post

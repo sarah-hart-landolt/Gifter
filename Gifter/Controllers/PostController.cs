@@ -70,5 +70,16 @@ namespace Gifter.Controllers
         {
             return Ok(_postRepository.Hottest(since));
         }
+
+        [HttpGet("user/{id}")]
+        public IActionResult GetByUser(int id)
+        {
+            var posts = _postRepository.GetByUserProfileId(id);
+            if (posts == null)
+            {
+                return NotFound();
+            }
+            return Ok(posts);
+        }
     }
 }
