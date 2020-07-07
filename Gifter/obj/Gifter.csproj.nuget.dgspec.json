@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sarah\\workspace\\Gifter\\Gifter\\Gifter.csproj": {}
+    "C:\\Users\\sarah\\workspace\\gifter\\Gifter\\Gifter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sarah\\workspace\\Gifter\\Gifter\\Gifter.csproj": {
+    "C:\\Users\\sarah\\workspace\\gifter\\Gifter\\Gifter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sarah\\workspace\\Gifter\\Gifter\\Gifter.csproj",
+        "projectUniqueName": "C:\\Users\\sarah\\workspace\\gifter\\Gifter\\Gifter.csproj",
         "projectName": "Gifter",
-        "projectPath": "C:\\Users\\sarah\\workspace\\Gifter\\Gifter\\Gifter.csproj",
+        "projectPath": "C:\\Users\\sarah\\workspace\\gifter\\Gifter\\Gifter.csproj",
         "packagesPath": "C:\\Users\\sarah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sarah\\workspace\\Gifter\\Gifter\\obj\\",
+        "outputPath": "C:\\Users\\sarah\\workspace\\gifter\\Gifter\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sarah\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,6 +38,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
               "version": "[3.1.5, )"

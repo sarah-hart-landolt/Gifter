@@ -1,8 +1,6 @@
 C:\Users\sarah\workspace\Gifter\Gifter\obj\Debug\netcoreapp3.1\Gifter.csprojAssemblyReference.cache
 C:\Users\sarah\workspace\Gifter\Gifter\obj\Debug\netcoreapp3.1\Gifter.AssemblyInfoInputs.cache
 C:\Users\sarah\workspace\Gifter\Gifter\obj\Debug\netcoreapp3.1\Gifter.AssemblyInfo.cs
-C:\Users\sarah\workspace\Gifter\Gifter\obj\Debug\netcoreapp3.1\Gifter.csproj.CoreCompileInputs.cache
-C:\Users\sarah\workspace\Gifter\Gifter\obj\Debug\netcoreapp3.1\Gifter.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\sarah\workspace\Gifter\Gifter\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\sarah\workspace\Gifter\Gifter\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\sarah\workspace\Gifter\Gifter\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -149,3 +147,15 @@ C:\Users\sarah\workspace\Gifter\Gifter\obj\Debug\netcoreapp3.1\staticwebassets\G
 C:\Users\sarah\workspace\Gifter\Gifter\obj\Debug\netcoreapp3.1\Gifter.dll
 C:\Users\sarah\workspace\Gifter\Gifter\obj\Debug\netcoreapp3.1\Gifter.pdb
 C:\Users\sarah\workspace\Gifter\Gifter\obj\Debug\netcoreapp3.1\Gifter.genruntimeconfig.cache
+C:\Users\sarah\workspace\gifter\Gifter\bin\Debug\netcoreapp3.1\client\package-lock.json
+C:\Users\sarah\workspace\gifter\Gifter\bin\Debug\netcoreapp3.1\client\package.json
+C:\Users\sarah\workspace\gifter\Gifter\bin\Debug\netcoreapp3.1\client\public\manifest.json
+C:\Users\sarah\workspace\gifter\Gifter\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\sarah\workspace\gifter\Gifter\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\sarah\workspace\gifter\Gifter\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\sarah\workspace\gifter\Gifter\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\sarah\workspace\gifter\Gifter\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\sarah\workspace\gifter\Gifter\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\sarah\workspace\gifter\Gifter\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\sarah\workspace\gifter\Gifter\obj\Debug\netcoreapp3.1\Gifter.csproj.CoreCompileInputs.cache
+C:\Users\sarah\workspace\gifter\Gifter\obj\Debug\netcoreapp3.1\Gifter.MvcApplicationPartsAssemblyInfo.cache

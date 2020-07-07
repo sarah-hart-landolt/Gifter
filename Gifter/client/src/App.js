@@ -5,7 +5,6 @@ import ApplicationViews from "./components/ApplicationViews";
 import { PostProvider } from "./providers/PostProvider";
 import { UserProfileProvider } from "./providers/UserProfileProvider";
 import Header from "./Header";
-import SearchBar from "./components/SearchBar";
 
 function App() {
   return (

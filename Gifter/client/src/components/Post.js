@@ -10,11 +10,12 @@ const Post = ({ post }) => {
 </Link> </p>
       <CardImg top src={post.imageUrl} alt={post.title} />
       <CardBody>
-        <p>
-        <Link to={`/posts/${post.id}`}>
-    <strong>{post.title}</strong>
-</Link>        </p>
+        <p><strong>{post.title}</strong> </p>
         <p>{post.caption}</p>
+        <Link to={`/posts/${post.id}`}>
+    View Comments
+</Link>        
+        
       </CardBody>
     </Card>
   );
