@@ -9,16 +9,17 @@ import SearchBar from "./SearchBar";
 export const PostList = () => {
   const { getAllPosts, posts } = useContext(PostContext);
   const [modal, setModal] = useState(false)
-  const toggle = () => setModal(!modal)
-
+  const toggle = () => {
+    if (modal === false) {
+      getAllPosts();
+    }
+    setModal(!modal)
+  }
 
   useEffect(() => {
     getAllPosts();
   }, []);
 
-  // useEffect(() => {
-  //   getAllPosts();
-  // }, [posts]);
   
   
   if (!posts) {
@@ -47,7 +48,7 @@ export const PostList = () => {
                 New Post
                 </ModalHeader>
                 <ModalBody>
-                    <PostForm toggler={toggle} />
+                    <PostForm toggle={toggle} />
                 </ModalBody>
             </Modal>
 </>

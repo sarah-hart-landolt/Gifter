@@ -1,43 +1,33 @@
 import React, { useContext, useRef, useEffect, useState } from "react";
 import { PostContext } from "../providers/PostProvider";
-import { UserProfileContext } from "../providers/UserProfileProvider";
 
 const PostForm = (props) => {
 const { addPost } = useContext(PostContext);
-const {getAllUserProfiles, userProfiles } = useContext(UserProfileContext);
-
-
-useEffect(() => {
-    getAllUserProfiles();
-  }, []);
-
 
 
   const title = useRef()
   const imageUrl = useRef()
   const caption = useRef()
-  const userProfile= useRef()
 
   const constructNewPost = () => {
-    const UserProfileId = parseInt(userProfile.current.value)
     const newPostObj= {
             title: title.current.value,
             imageUrl: imageUrl.current.value,
             caption: caption.current.value,
-            userProfileId: UserProfileId,
-            dateCreated: new Date()
     }
-        addPost(newPostObj).then(props.toggler);
+        addPost(newPostObj).then(props.toggle);
     }
 
-
+    
   return (
     <form className="postForm"   onSubmit={
         evt => {
+            
             evt.preventDefault() // Prevent browser from submitting the form
             // create the animal function goes here
             constructNewPost()
         }
+         
     }>
         <fieldset>
             <div className="form-group">
@@ -78,25 +68,6 @@ useEffect(() => {
                     className="form-control"
                     placeholder="caption"
                 />
-            </div>
-        </fieldset>
-        <fieldset>
-            <div className="form-group">
-                <label htmlFor="userProfileId">User Profile: </label>
-                <select
-                    defaultValue=""
-                    name="userProfileId"
-                    ref={userProfile}
-                    id="userProfileId"
-                    className="form-control"
-                >
-                    <option value="0">Select a User</option>
-                    {userProfiles.map(up => (
-                        <option key={up.id} value={up.id}>
-                            {up.name}
-                        </option>
-                    ))}
-                </select>
             </div>
         </fieldset>
         <button type="submit"

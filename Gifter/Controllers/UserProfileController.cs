@@ -3,6 +3,7 @@ using Gifter.Data;
 using Gifter.Repositories;
 using Gifter.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace Gifter.Controllers
 {
@@ -70,5 +71,7 @@ namespace Gifter.Controllers
             _userProfileRepository.Delete(id);
             return NoContent();
         }
+
+        
     }
 }
